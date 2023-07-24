@@ -147,7 +147,7 @@ async def register_user(user: UserCreate, db: user_database = Depends(get_sessio
     user_id = await create_user(user, db)
     return {"id": user_id, "username": user.username, "password": "**********"}
 
-    
+
 security = HTTPBasic()
 
 @app.post("/login/")
@@ -157,7 +157,6 @@ async def login(credentials: HTTPBasicCredentials = Depends(security)):
     if user is None or not verify_password(credentials.password, user.hashed_password):  # Remplacez cette fonction par celle pour vérifier le mot de passe avec le mot de passe haché stocké dans la base de données
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
 
-    # Ici, vous pouvez générer un token d'authentification pour l'utilisateur et le renvoyer en réponse
     token = generate_authentication_token(user.username)
 
     return {"token": token}

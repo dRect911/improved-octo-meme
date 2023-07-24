@@ -1,0 +1,36 @@
+# Ignorer les répertoires et fichiers générés par les gestionnaires de dépendances
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.env/
+venv/
+
+lib/
+lib64/
+include/
+bin/
+
+
+# Ignorer les fichiers de journalisation
+*.log
+
+# Ignorer les fichiers de base de données
+*.db
+*.db-shm
+*.db-wal
+
+# Ignorer les fichiers d'environnement local (définis par exemple dans .env ou .env.local)
+.env
+.env.local
+
+# Ignorer les fichiers de configuration système générés
+*.idea/
+.vscode/
+
+# Ignorer les fichiers de sauvegarde
+*~
+*.bak
